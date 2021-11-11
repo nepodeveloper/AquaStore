@@ -1,4 +1,5 @@
 using AquaStoreAPI.Models;
+using AquaStoreAPI.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -31,10 +32,12 @@ namespace AquaStoreAPI
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "AquaStoreAPI", Version = "v1" });
             });
 
-            services.AddDbContext<AquaStoreDBContext>(options =>
-            options.UseSqlServer(Configuration.GetConnectionString("DevConnection")));
+            /*services.AddDbContext<AquaStoreDBContext>(options =>
+            options.UseSqlServer(Configuration.GetConnectionString("DevConnection"))); 
+            services.AddCors();*/
 
-            services.AddCors();
+            services.AddDbContext<AquaStoreDBContext>(o => o.UseSqlite("Data source=AquaStore.db"));
+            services.AddScoped<IFishRepository, FishRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
