@@ -40,6 +40,11 @@ namespace AquaStoreAPI.Repositories
             return await _context.Aquaria.FindAsync(id);
         }
 
+        public Task GetAquariumSize(double AquariumSize, string to_measurement)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task Update(Aquarium aquarium)
         {
             _context.Entry(aquarium).State = EntityState.Modified;
