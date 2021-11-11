@@ -13,5 +13,6 @@ namespace AquaStoreAPI.Repositories
         Task<Aquarium> Create(Aquarium aquarium);
         Task Update(Aquarium aquarium);
         Task Delete(int id);
+        Task GetAquariumSize(double AquariumSize, string to_measurement);
     }
 }

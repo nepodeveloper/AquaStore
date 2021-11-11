@@ -13,7 +13,7 @@ namespace AquaStoreAPI.Models
 
         public string GlassType { get; set; }
 
-        public decimal Size { get; set; }
+        public int Size { get; set; }
 
         public string Shape { get; set; }
 

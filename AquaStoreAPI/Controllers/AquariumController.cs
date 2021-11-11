@@ -63,7 +63,28 @@ namespace AquaStoreAPI.Controllers
             return NoContent();
         }
 
+        public  double ConvertMeasurements(double AquariumSize, string to_measurement)
+        {
+            double gallon = 0;
+            double liter = 0;
+            double grandTotal = 0;
+
+            if (to_measurement == "gallon")
+            {
+                gallon = AquariumSize;
+                grandTotal =  (gallon * 3.78541);
+            }
+            else if(to_measurement == "liter")
+            {
+                liter = AquariumSize;
+                grandTotal = (liter * 0.264172);
+            }
+            return grandTotal;
+        }
+
     }
+
+
 
     
 
