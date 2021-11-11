@@ -10,7 +10,7 @@ namespace AquaStoreAPI.Models
     {
         public AquaStoreDBContext(DbContextOptions<AquaStoreDBContext> options) : base(options)
         {
-
+            Database.EnsureCreated();
         }
 
         public DbSet<Fish> Fish { get; set; }

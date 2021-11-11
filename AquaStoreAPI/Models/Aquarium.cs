@@ -9,21 +9,13 @@ namespace AquaStoreAPI.Models
 {
     public class Aquarium
     {
-        [Key]
         public int AquariumID { get; set; }
 
-        [Column(TypeName = "nvarchar(50)")]
         public string GlassType { get; set; }
 
         public decimal Size { get; set; }
 
-        [Column(TypeName = "nvarchar(20)")]
         public string Shape { get; set; }
-
-        //Foreign Key
-        public int FishID { get; set; }
-        public Fish Fish { get; set; }
-
 
     }
 }

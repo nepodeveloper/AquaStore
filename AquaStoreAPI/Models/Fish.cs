@@ -9,13 +9,11 @@ namespace AquaStoreAPI.Models
 {
     public class Fish
     {
-        [Key]
+        
         public int FishID { get; set; }
 
-        [Column(TypeName = "nvarchar(50)")]
         public string Species { get; set; }
 
-        [Column(TypeName = "nvarchar(20)")]
         public string Color { get; set; }
 
         public int Fins { get; set; }
